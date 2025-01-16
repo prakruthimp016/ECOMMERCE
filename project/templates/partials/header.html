@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* General Reset */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Navigation Bar Styling */
+nav {
+    background-color: #333; 
+    color: white;
+    padding: 0.5em 1em; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo Styling */
+.logo a {
+    color: #fff; /* White text for the logo */
+    text-decoration: none;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+/* Navigation Links */
+.nav-links a {
+    color: #fff; /* White text for links */
+    text-decoration: none;
+    margin: 0 1em;
+    padding: 0.5em 0.8em;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.nav-links a:hover {
+    background-color: #555; /* Hover effect */
+}
+
+/* User Options Styling */
+.user-options {
+    display: flex;
+    align-items: center;
+}
+
+.user-options a {
+    color: #fff; /* White text for links */
+    text-decoration: none;
+    margin-left: 1em;
+    padding: 0.5em 0.8em;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.user-options a:hover {
+    background-color: #555; /* Hover effect */
+}
+
+.username {
+    margin-left: 1em;
+    color: #f0db4f; /* Highlight username in yellow */
+    font-weight: bold;
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .nav-links {
+        margin-top: 0.5em;
+    }
+    .nav-links a {
+        display: block;
+        margin: 0.5em 0;
+    }
+    .user-options {
+        margin-top: 0.5em;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .user-options a {
+        margin-left: 0;
+        margin-top: 0.5em;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <!-- partials/header.html --> 
+<nav> 
+    <div class="header"> 
+      <!-- Logo Section --> 
+      <div class="logo"> 
+        <a href="{% url 'home' %}">LogoName</a> 
+      </div> 
+   
+      <!-- Navigation Buttons --> 
+      
+   
+      <!-- User Section --> 
+      <div class="user-options"> 
+        {% if user.is_authenticated %} 
+          <!-- If the user is logged in --> 
+          <a href="{% url 'home' %}" class="cart">Cart</a> 
+          <span class="username">Hello, {{ user.username }}</span> 
+          <a href="{% url 'signin' %}" class="signin">Logout</a> 
+        {% else %} 
+          <!-- If the user is not logged in --> 
+          <a href="{% url 'signin' %}" class="login">Login</a> 
+          <a href="{% url 'register' %}" class="register">Register</a> 
+        {% endif %} 
+      </div> 
+    </div> 
+  </nav>
+    
+</body>
+</html>

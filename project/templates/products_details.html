@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ products.product.product_name }}</title>
+</head>
+<body>
+    {% for message in messages %}
+    <div class="alert alert-{{message.tags}}" role="alert">
+        {{message}}
+    <h1>{{ products.product.product_name }}</h1>
+    <p><strong>Colour:</strong> {{ products.colour.colour_name }}</p>
+    <p><strong>Original Price:</strong> ₹{{ products.original_price }}</p>
+    <p><strong>Sale Price:</strong> ₹{{ products.sale_price }}</p>
+    <div>
+        <img src="{{ products.image1.url }}" alt="Image 1" height="200px" width="200px">
+        
+
+    </div>
+
+
+    
+</body>
+</html>

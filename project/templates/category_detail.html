@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% for message in messages %}
+    <div class="alert alert-{{message.tags}}" role="alert">
+        {{message}}
+
+        {% endfor %} </div>
+    <h1>Product List</h1>
+    <table border="1">
+        <tbody>
+            {% for product in products %}
+            
+            <div>
+                <a href="{%  url 'product_details' product.slug %}" title="product"><img src="{{product.image1.url}}" width="200px" height="200px" alt=""></a><br>
+                
+                <p>{{product.product.product_name}}</p>
+                {{product.colour.colour_name}}
+                <p>Colour:{{product.colour.colour_name}}</p>
+                <p>Original_price{{ product.original_price}}</p>
+                <p>Sale_price{{product.sale_price}}</p>
+                
+
+                
+            </div>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</body>
+</html>
+
