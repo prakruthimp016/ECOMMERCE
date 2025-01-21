@@ -170,8 +170,9 @@ def add_to_cart(request,productitemslug,sizeslug):
         url='/increment/'+str(item.id)+'/'
         return redirect(url)
     OrderItem.objects.create(user=user,product_item=productitem,size=sizeoption)
-    return HttpResponse('product added to cart successfully')
 
+    return HttpResponse('product added to cart successfully')
+    
 def increment_quentity(request,id):
     orderitem=OrderItem.objects.get(id=id)
     product_item=ProductItem.objects.get(slug=orderitem.product_item.slug)

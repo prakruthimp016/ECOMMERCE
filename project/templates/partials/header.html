@@ -13,9 +13,9 @@ body {
 
 /* Navigation Bar Styling */
 nav {
-    background-color: #333; 
-    color: white;
-    padding: 0.5em 1em; 
+    background-color: #333; /* Dark background */
+    color: white; /* White text */
+    padding: 0.5em 1em; /* Spacing */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -100,10 +100,10 @@ nav {
     <div class="header"> 
       <!-- Logo Section --> 
       <div class="logo"> 
-        <a href="{% url 'home' %}">LogoName</a> 
+        <a href="{% url 'home' %}">ECCOMMERCE</a> 
       </div> 
    
-      
+      <!-- Navigation Buttons --> 
       
    
       <!-- User Section --> 
@@ -112,7 +112,7 @@ nav {
           <!-- If the user is logged in --> 
           <a href="{% url 'home' %}" class="cart">Cart</a> 
           <span class="username">Hello, {{ user.username }}</span> 
-          <a href="{% url 'signin' %}" class="signin">Logout</a> 
+          <a href="{% url 'signout' %}" class="logout">Logout</a> 
         {% else %} 
           <!-- If the user is not logged in --> 
           <a href="{% url 'signin' %}" class="login">Login</a> 
