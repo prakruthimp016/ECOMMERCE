@@ -15,11 +15,13 @@
     </div>
     {% endfor %}
     {% include 'partials/header.html' %}
-    {% block header %}{% endblock %}
-
-    {% block body %}{% endblock %}
     
-    {% block footer %}{% endblock %}
+
+    {% block content %}{% endblock %}
+    
+    
+    
+    {% include 'partials/footer.html' %}
     <script src="{% static 'js/bootstrap.bundle.min.js}"></script>
 
 </body>

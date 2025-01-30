@@ -110,8 +110,10 @@ nav {
       <div class="user-options"> 
         {% if user.is_authenticated %} 
           <!-- If the user is logged in --> 
-          <a href="{% url 'home' %}" class="cart">Cart</a> 
-          <span class="username">Hello, {{ user.username }}</span> 
+          <a href="{% url 'home' %}" class="cart">Categories</a> 
+          <span class="username">Hello, {{ user.username }}</span>
+          <a href="{% url 'signin' %}" class="login">Login</a> 
+          <a href="{% url 'register' %}" class="register">Register</a>  
           <a href="{% url 'signout' %}" class="logout">Logout</a> 
         {% else %} 
           <!-- If the user is not logged in --> 
